@@ -299,6 +299,15 @@
       font-size: 11px;
     }
     .email-address:hover { text-decoration: underline; }
+    .email-address { cursor: copy; }
+    .email-address.copied { color: #27ae60; }
+    #copyToast {
+      position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%);
+      background: #2c3e50; color: #fff; padding: 10px 18px; border-radius: 8px;
+      font-size: 13px; font-weight: 600; box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      z-index: 3000; opacity: 0; pointer-events: none; transition: opacity 0.25s ease;
+    }
+    #copyToast.show { opacity: 1; }
 
     /* RESULTADOS DA BUSCA LIVRE */
     .search-results {
@@ -528,6 +537,7 @@
 <body>
 
   <!-- APLICAÇÃO PRINCIPAL (SEM SENHA) -->
+  <div id="copyToast" class="no-print"></div>
   <div id="mainApp" style="display: block;">
     
     <!-- UTILITÁRIOS WIDGET FLUTUANTE -->
@@ -558,98 +568,98 @@
                   <span>▼</span>
                 </div>
                 <div class="sub-category-content" style="display: none; padding: 6px 10px; border-top: 1px solid #e2e8f0;">
-                  <div class="email-list-item"><span>1º DP - Sé</span><a href="mailto:spaulo.dp001@policiacivil.sp.gov.br" class="email-address">spaulo.dp001@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>2º DP - Bom Retiro</span><a href="mailto:dp02.spaulo@policiacivil.sp.gov.br" class="email-address">dp02.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>3º DP - Santa Ifigênia</span><a href="mailto:spaulo.dp003@policiacivil.sp.gov.br" class="email-address">spaulo.dp003@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>4º DP - Consolação</span><a href="mailto:spaulo.dp004@policiacivil.sp.gov.br" class="email-address">spaulo.dp004@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>5º DP - Aclimação</span><a href="mailto:spaulo.dp005@policiacivil.sp.gov.br" class="email-address">spaulo.dp005@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>6º DP - Cambuci</span><a href="mailto:spaulo.dp006@policiacivil.sp.gov.br" class="email-address">spaulo.dp006@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>7º DP - Lapa</span><a href="mailto:spaulo.dp007@policiacivil.sp.gov.br" class="email-address">spaulo.dp007@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>8º DP - Brás</span><a href="mailto:dp08.spaulo@policiacivil.sp.gov.br" class="email-address">dp08.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>9º DP - Carandiru</span><a href="mailto:spaulo.dp009@policiacivil.sp.gov.br" class="email-address">spaulo.dp009@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>10º DP - Penha de França</span><a href="mailto:dp010.spaulo@policiacivil.sp.gov.br" class="email-address">dp010.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>11º DP - Santo Amaro</span><a href="mailto:spaulo.dp011@policiacivil.sp.gov.br" class="email-address">spaulo.dp011@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>12º DP - Pari</span><a href="mailto:dp012.spaulo@policiacivil.sp.gov.br" class="email-address">dp012.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>13º DP - Casa Verde</span><a href="mailto:spaulo.dp013@policiacivil.sp.gov.br" class="email-address">spaulo.dp013@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>14º DP - Pinheiros</span><a href="mailto:spaulo.dp014@policiacivil.sp.gov.br" class="email-address">spaulo.dp014@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>15º DP - Itaim Bibi</span><a href="mailto:spaulo.dp015@policiacivil.sp.gov.br" class="email-address">spaulo.dp015@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>16º DP - Vila Clementino</span><a href="mailto:spaulo.dp016@policiacivil.sp.gov.br" class="email-address">spaulo.dp016@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>17º DP - Ipiranga</span><a href="mailto:spaulo.dp017@policiacivil.sp.gov.br" class="email-address">spaulo.dp017@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>18º DP - Alto da Mooca</span><a href="mailto:dp018.spaulo@policiacivil.sp.gov.br" class="email-address">dp018.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>19º DP - Vila Maria</span><a href="mailto:spaulo.dp019@policiacivil.sp.gov.br" class="email-address">spaulo.dp019@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>20º DP - Água Fria</span><a href="mailto:spaulo.dp020@policiacivil.sp.gov.br" class="email-address">spaulo.dp020@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>21º DP - Vila Matilde</span><a href="mailto:dp021.spaulo@policiacivil.sp.gov.br" class="email-address">dp021.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>22º DP - São Miguel Paulista</span><a href="mailto:spaulo.dp022@policiacivil.sp.gov.br" class="email-address">spaulo.dp022@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>23º DP - Perdizes</span><a href="mailto:spaulo.dp023@policiacivil.sp.gov.br" class="email-address">spaulo.dp023@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>24º DP - Ponte Rasa</span><a href="mailto:dp024.spaulo@policiacivil.sp.gov.br" class="email-address">dp024.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>25º DP - Parelheiros</span><a href="mailto:spaulo.dp025@policiacivil.sp.gov.br" class="email-address">spaulo.dp025@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>26º DP - Sacomã</span><a href="mailto:spaulo.dp026@policiacivil.sp.gov.br" class="email-address">spaulo.dp026@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>27º DP - Campo Belo</span><a href="mailto:spaulo.dp027@policiacivil.sp.gov.br" class="email-address">spaulo.dp027@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>28º DP - Freguesia do Ó</span><a href="mailto:spaulo.dp028@policiacivil.sp.gov.br" class="email-address">spaulo.dp028@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>29º DP - Vila Diva</span><a href="mailto:dp029.spaulo@policiacivil.sp.gov.br" class="email-address">dp029.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>30º DP - Tatuapé</span><a href="mailto:dp030.spaulo@policiacivil.sp.gov.br" class="email-address">dp030.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>31º DP - Vila Carrão</span><a href="mailto:dp031.spaulo@policiacivil.sp.gov.br" class="email-address">dp031.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>32º DP - Itaquera</span><a href="mailto:spaulo.dp032@policiacivil.sp.gov.br" class="email-address">spaulo.dp032@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>33º DP - Pirituba</span><a href="mailto:spaulo.dp033@policiacivil.sp.gov.br" class="email-address">spaulo.dp033@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>34º DP - Vila Sônia</span><a href="mailto:dp034.spaulo@policiacivil.sp.gov.br" class="email-address">dp034.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>35º DP - Jabaquara</span><a href="mailto:spaulo.dp035@policiacivil.sp.gov.br" class="email-address">spaulo.dp035@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>36º DP - Vila Mariana</span><a href="mailto:spaulo.dp036@policiacivil.sp.gov.br" class="email-address">spaulo.dp036@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>37º DP - Campo Limpo</span><a href="mailto:spaulo.dp037@policiacivil.sp.gov.br" class="email-address">spaulo.dp037@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>38º DP - Vila Amália</span><a href="mailto:spaulo.dp038@policiacivil.sp.gov.br" class="email-address">spaulo.dp038@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>39º DP - Vila Gustavo</span><a href="mailto:spaulo.dp039@policiacivil.sp.gov.br" class="email-address">spaulo.dp039@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>40º DP - Vila Santa Maria</span><a href="mailto:spaulo.dp040@policiacivil.sp.gov.br" class="email-address">spaulo.dp040@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>41º DP - Vila Rica</span><a href="mailto:dp041.spaulo@policiacivil.sp.gov.br" class="email-address">dp041.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>42º DP - Parque São Lucas</span><a href="mailto:dp042.spaulo@policiacivil.sp.gov.br" class="email-address">dp042.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>43º DP - Cidade Ademar</span><a href="mailto:spaulo.dp043@policiacivil.sp.gov.br" class="email-address">spaulo.dp043@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>44º DP - Parque Santo Antônio</span><a href="mailto:dp044.spaulo@policiacivil.sp.gov.br" class="email-address">dp044.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>45º DP - Vila Brasilândia</span><a href="mailto:spaulo.dp045@policiacivil.sp.gov.br" class="email-address">spaulo.dp045@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>46º DP - Perus</span><a href="mailto:spaulo.dp046@policiacivil.sp.gov.br" class="email-address">spaulo.dp046@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>47º DP - Capão Redondo</span><a href="mailto:spaulo.dp047@policiacivil.sp.gov.br" class="email-address">spaulo.dp047@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>49º DP - São Mateus</span><a href="mailto:spaulo.dp049@policiacivil.sp.gov.br" class="email-address">spaulo.dp049@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>50º DP - Itaim Paulista</span><a href="mailto:spaulo.dp050@policiacivil.sp.gov.br" class="email-address">spaulo.dp050@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>51º DP - Butantã</span><a href="mailto:spaulo.dp051@policiacivil.sp.gov.br" class="email-address">spaulo.dp051@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>52º DP - Parque São Jorge</span><a href="mailto:dp052.spaulo@policiacivil.sp.gov.br" class="email-address">dp052.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>53º DP - Parque do Carmo</span><a href="mailto:spaulo.dp053@policiacivil.sp.gov.br" class="email-address">spaulo.dp053@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>54º DP - Cidade Tiradentes</span><a href="mailto:dp054.spaulo@policiacivil.sp.gov.br" class="email-address">dp054.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>55º DP - Parque São Rafael</span><a href="mailto:dp055.spaulo@policiacivil.sp.gov.br" class="email-address">dp055.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>56º DP - Vila Alpina</span><a href="mailto:dp56.decap@policiacivil.sp.gov.br" class="email-address">dp56.decap@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>57º DP - Parque da Mooca</span><a href="mailto:dp057.spaulo@policiacivil.sp.gov.br" class="email-address">dp057.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>58º DP - Vila Formosa</span><a href="mailto:dp058.spaulo@policiacivil.sp.gov.br" class="email-address">dp058.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>59º DP - Jardim dos Ipês</span><a href="mailto:spaulo.dp059@policiacivil.sp.gov.br" class="email-address">spaulo.dp059@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>62º DP - Ermelino Matarazzo</span><a href="mailto:spaulo.dp062@policiacivil.sp.gov.br" class="email-address">spaulo.dp062@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>63º DP - Vila Jacuí</span><a href="mailto:spaulo.dp063@policiacivil.sp.gov.br" class="email-address">spaulo.dp063@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>64º DP - Cidade A.E. Carvalho</span><a href="mailto:spaulo.dp064@policiacivil.sp.gov.br" class="email-address">spaulo.dp064@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>65º DP - Artur Alvim</span><a href="mailto:spaulo.dp065@policiacivil.sp.gov.br" class="email-address">spaulo.dp065@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>66º DP - Vale do Aricanduva</span><a href="mailto:dp066.spaulo@policiacivil.sp.gov.br" class="email-address">dp066.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>67º DP - Jardim Robru</span><a href="mailto:spaulo.dp067@policiacivil.sp.gov.br" class="email-address">spaulo.dp067@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>68º DP - Lajeado</span><a href="mailto:spaulo.dp068@policiacivil.sp.gov.br" class="email-address">spaulo.dp068@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>69º DP - Teotônio Vilela</span><a href="mailto:dp069.spaulo@policiacivil.sp.gov.br" class="email-address">dp069.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>70º DP - Vila Ema</span><a href="mailto:spaulo.dp070@policiacivil.sp.gov.br" class="email-address">spaulo.dp070@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>72º DP - Vila Penteado</span><a href="mailto:spaulo.dp072@policiacivil.sp.gov.br" class="email-address">spaulo.dp072@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>73º DP - Jaçanã</span><a href="mailto:spaulo.dp073@policiacivil.sp.gov.br" class="email-address">spaulo.dp073@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>74º DP - Jaraguá</span><a href="mailto:spaulo.dp074@policiacivil.sp.gov.br" class="email-address">spaulo.dp074@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>75º DP - Jardim Arpoador</span><a href="mailto:spaulo.dp075@policiacivil.sp.gov.br" class="email-address">spaulo.dp075@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>77º DP - Santa Cecília</span><a href="mailto:spaulo.dp077@policiacivil.sp.gov.br" class="email-address">spaulo.dp077@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>78º DP - Jardins</span><a href="mailto:spaulo.dp078@policiacivil.sp.gov.br" class="email-address">spaulo.dp078@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>80º DP - Vila Joaniza</span><a href="mailto:spaulo.dp080@policiacivil.sp.gov.br" class="email-address">spaulo.dp080@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>81º DP - Belém</span><a href="mailto:dp081.spaulo@policiacivil.sp.gov.br" class="email-address">dp081.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>83º DP - Parque Bristol</span><a href="mailto:spaulo.dp083@policiacivil.sp.gov.br" class="email-address">spaulo.dp083@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>85º DP - Jardim Mirna</span><a href="mailto:spaulo.dp085@policiacivil.sp.gov.br" class="email-address">spaulo.dp085@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>87º DP - Vila Pereira Barreto</span><a href="mailto:dp087.spaulo@policiacivil.sp.gov.br" class="email-address">dp087.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>89º DP - Portal do Morumbi</span><a href="mailto:spaulo.dp089@policiacivil.sp.gov.br" class="email-address">spaulo.dp089@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>90º DP - Parque Novo Mundo</span><a href="mailto:spaulo.dp090@policiacivil.sp.gov.br" class="email-address">spaulo.dp090@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>91º DP - CEASA</span><a href="mailto:spaulo.dp091@policiacivil.sp.gov.br" class="email-address">spaulo.dp091@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>92º DP - Parque Santo Antônio</span><a href="mailto:spaulo.dp092@policiacivil.sp.gov.br" class="email-address">spaulo.dp092@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>93º DP - Jaguaré</span><a href="mailto:dp093.spaulo@policiacivil.sp.gov.br" class="email-address">dp093.spaulo@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>95º DP - Heliópolis</span><a href="mailto:spaulo.dp095@policiacivil.sp.gov.br" class="email-address">spaulo.dp095@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>96º DP - Monções</span><a href="mailto:spaulo.dp096@policiacivil.sp.gov.br" class="email-address">spaulo.dp096@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>97º DP - Americanópolis</span><a href="mailto:spaulo.dp097@policiacivil.sp.gov.br" class="email-address">spaulo.dp097@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>98º DP - Jardim Jabaquara</span><a href="mailto:spaulo.dp098@policiacivil.sp.gov.br" class="email-address">spaulo.dp098@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>99º DP - Campo Grande</span><a href="mailto:spaulo.dp099@policiacivil.sp.gov.br" class="email-address">spaulo.dp099@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>100º DP - Jardim Herculano</span><a href="mailto:spaulo.dp100@policiacivil.sp.gov.br" class="email-address">spaulo.dp100@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>101º DP - Jardim das Imbuias</span><a href="mailto:spaulo.dp101@policiacivil.sp.gov.br" class="email-address">spaulo.dp101@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>102º DP - Socorro</span><a href="mailto:spaulo.dp102@policiacivil.sp.gov.br" class="email-address">spaulo.dp102@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>103º DP - Itaquera</span><a href="mailto:spaulo.dp103@policiacivil.sp.gov.br" class="email-address">spaulo.dp103@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>1º DP - Sé</span><a href="#" data-email="spaulo.dp001@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp001@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>2º DP - Bom Retiro</span><a href="#" data-email="dp02.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp02.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>3º DP - Santa Ifigênia</span><a href="#" data-email="spaulo.dp003@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp003@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>4º DP - Consolação</span><a href="#" data-email="spaulo.dp004@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp004@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>5º DP - Aclimação</span><a href="#" data-email="spaulo.dp005@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp005@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>6º DP - Cambuci</span><a href="#" data-email="spaulo.dp006@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp006@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>7º DP - Lapa</span><a href="#" data-email="spaulo.dp007@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp007@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>8º DP - Brás</span><a href="#" data-email="dp08.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp08.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>9º DP - Carandiru</span><a href="#" data-email="spaulo.dp009@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp009@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>10º DP - Penha de França</span><a href="#" data-email="dp010.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp010.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>11º DP - Santo Amaro</span><a href="#" data-email="spaulo.dp011@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp011@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>12º DP - Pari</span><a href="#" data-email="dp012.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp012.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>13º DP - Casa Verde</span><a href="#" data-email="spaulo.dp013@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp013@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>14º DP - Pinheiros</span><a href="#" data-email="spaulo.dp014@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp014@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>15º DP - Itaim Bibi</span><a href="#" data-email="spaulo.dp015@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp015@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>16º DP - Vila Clementino</span><a href="#" data-email="spaulo.dp016@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp016@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>17º DP - Ipiranga</span><a href="#" data-email="spaulo.dp017@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp017@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>18º DP - Alto da Mooca</span><a href="#" data-email="dp018.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp018.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>19º DP - Vila Maria</span><a href="#" data-email="spaulo.dp019@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp019@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>20º DP - Água Fria</span><a href="#" data-email="spaulo.dp020@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp020@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>21º DP - Vila Matilde</span><a href="#" data-email="dp021.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp021.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>22º DP - São Miguel Paulista</span><a href="#" data-email="spaulo.dp022@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp022@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>23º DP - Perdizes</span><a href="#" data-email="spaulo.dp023@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp023@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>24º DP - Ponte Rasa</span><a href="#" data-email="dp024.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp024.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>25º DP - Parelheiros</span><a href="#" data-email="spaulo.dp025@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp025@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>26º DP - Sacomã</span><a href="#" data-email="spaulo.dp026@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp026@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>27º DP - Campo Belo</span><a href="#" data-email="spaulo.dp027@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp027@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>28º DP - Freguesia do Ó</span><a href="#" data-email="spaulo.dp028@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp028@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>29º DP - Vila Diva</span><a href="#" data-email="dp029.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp029.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>30º DP - Tatuapé</span><a href="#" data-email="dp030.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp030.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>31º DP - Vila Carrão</span><a href="#" data-email="dp031.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp031.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>32º DP - Itaquera</span><a href="#" data-email="spaulo.dp032@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp032@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>33º DP - Pirituba</span><a href="#" data-email="spaulo.dp033@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp033@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>34º DP - Vila Sônia</span><a href="#" data-email="dp034.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp034.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>35º DP - Jabaquara</span><a href="#" data-email="spaulo.dp035@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp035@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>36º DP - Vila Mariana</span><a href="#" data-email="spaulo.dp036@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp036@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>37º DP - Campo Limpo</span><a href="#" data-email="spaulo.dp037@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp037@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>38º DP - Vila Amália</span><a href="#" data-email="spaulo.dp038@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp038@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>39º DP - Vila Gustavo</span><a href="#" data-email="spaulo.dp039@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp039@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>40º DP - Vila Santa Maria</span><a href="#" data-email="spaulo.dp040@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp040@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>41º DP - Vila Rica</span><a href="#" data-email="dp041.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp041.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>42º DP - Parque São Lucas</span><a href="#" data-email="dp042.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp042.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>43º DP - Cidade Ademar</span><a href="#" data-email="spaulo.dp043@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp043@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>44º DP - Parque Santo Antônio</span><a href="#" data-email="dp044.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp044.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>45º DP - Vila Brasilândia</span><a href="#" data-email="spaulo.dp045@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp045@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>46º DP - Perus</span><a href="#" data-email="spaulo.dp046@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp046@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>47º DP - Capão Redondo</span><a href="#" data-email="spaulo.dp047@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp047@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>49º DP - São Mateus</span><a href="#" data-email="spaulo.dp049@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp049@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>50º DP - Itaim Paulista</span><a href="#" data-email="spaulo.dp050@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp050@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>51º DP - Butantã</span><a href="#" data-email="spaulo.dp051@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp051@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>52º DP - Parque São Jorge</span><a href="#" data-email="dp052.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp052.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>53º DP - Parque do Carmo</span><a href="#" data-email="spaulo.dp053@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp053@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>54º DP - Cidade Tiradentes</span><a href="#" data-email="dp054.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp054.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>55º DP - Parque São Rafael</span><a href="#" data-email="dp055.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp055.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>56º DP - Vila Alpina</span><a href="#" data-email="dp56.decap@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp56.decap@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>57º DP - Parque da Mooca</span><a href="#" data-email="dp057.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp057.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>58º DP - Vila Formosa</span><a href="#" data-email="dp058.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp058.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>59º DP - Jardim dos Ipês</span><a href="#" data-email="spaulo.dp059@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp059@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>62º DP - Ermelino Matarazzo</span><a href="#" data-email="spaulo.dp062@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp062@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>63º DP - Vila Jacuí</span><a href="#" data-email="spaulo.dp063@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp063@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>64º DP - Cidade A.E. Carvalho</span><a href="#" data-email="spaulo.dp064@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp064@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>65º DP - Artur Alvim</span><a href="#" data-email="spaulo.dp065@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp065@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>66º DP - Vale do Aricanduva</span><a href="#" data-email="dp066.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp066.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>67º DP - Jardim Robru</span><a href="#" data-email="spaulo.dp067@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp067@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>68º DP - Lajeado</span><a href="#" data-email="spaulo.dp068@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp068@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>69º DP - Teotônio Vilela</span><a href="#" data-email="dp069.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp069.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>70º DP - Vila Ema</span><a href="#" data-email="spaulo.dp070@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp070@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>72º DP - Vila Penteado</span><a href="#" data-email="spaulo.dp072@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp072@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>73º DP - Jaçanã</span><a href="#" data-email="spaulo.dp073@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp073@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>74º DP - Jaraguá</span><a href="#" data-email="spaulo.dp074@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp074@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>75º DP - Jardim Arpoador</span><a href="#" data-email="spaulo.dp075@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp075@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>77º DP - Santa Cecília</span><a href="#" data-email="spaulo.dp077@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp077@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>78º DP - Jardins</span><a href="#" data-email="spaulo.dp078@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp078@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>80º DP - Vila Joaniza</span><a href="#" data-email="spaulo.dp080@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp080@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>81º DP - Belém</span><a href="#" data-email="dp081.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp081.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>83º DP - Parque Bristol</span><a href="#" data-email="spaulo.dp083@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp083@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>85º DP - Jardim Mirna</span><a href="#" data-email="spaulo.dp085@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp085@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>87º DP - Vila Pereira Barreto</span><a href="#" data-email="dp087.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp087.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>89º DP - Portal do Morumbi</span><a href="#" data-email="spaulo.dp089@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp089@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>90º DP - Parque Novo Mundo</span><a href="#" data-email="spaulo.dp090@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp090@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>91º DP - CEASA</span><a href="#" data-email="spaulo.dp091@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp091@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>92º DP - Parque Santo Antônio</span><a href="#" data-email="spaulo.dp092@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp092@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>93º DP - Jaguaré</span><a href="#" data-email="dp093.spaulo@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dp093.spaulo@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>95º DP - Heliópolis</span><a href="#" data-email="spaulo.dp095@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp095@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>96º DP - Monções</span><a href="#" data-email="spaulo.dp096@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp096@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>97º DP - Americanópolis</span><a href="#" data-email="spaulo.dp097@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp097@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>98º DP - Jardim Jabaquara</span><a href="#" data-email="spaulo.dp098@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp098@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>99º DP - Campo Grande</span><a href="#" data-email="spaulo.dp099@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp099@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>100º DP - Jardim Herculano</span><a href="#" data-email="spaulo.dp100@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp100@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>101º DP - Jardim das Imbuias</span><a href="#" data-email="spaulo.dp101@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp101@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>102º DP - Socorro</span><a href="#" data-email="spaulo.dp102@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp102@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>103º DP - Itaquera</span><a href="#" data-email="spaulo.dp103@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.dp103@policiacivil.sp.gov.br</a></div>
                 </div>
               </div>
 
@@ -660,13 +670,13 @@
                   <span>▼</span>
                 </div>
                 <div class="sub-category-content" style="display: none; padding: 6px 10px; border-top: 1px solid #e2e8f0;">
-                  <div class="email-list-item"><span>1ª DDM - Capital (Centro)</span><a href="mailto:spaulo.ddm01@policiacivil.sp.gov.br" class="email-address">spaulo.ddm01@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>2ª DDM - Sul</span><a href="mailto:spaulo.ddm02@policiacivil.sp.gov.br" class="email-address">spaulo.ddm02@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>3ª DDM - Oeste</span><a href="mailto:spaulo.ddm03@policiacivil.sp.gov.br" class="email-address">spaulo.ddm03@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>4ª DDM - Norte</span><a href="mailto:ddm.sec04@policiacivil.sp.gov.br" class="email-address">ddm.sec04@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>5ª DDM - Leste</span><a href="mailto:ddm.sec05@policiacivil.sp.gov.br" class="email-address">ddm.sec05@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>8ª DDM - São Mateus</span><a href="mailto:ddm.sec08@policiacivil.sp.gov.br" class="email-address">ddm.sec08@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>9ª DDM - Pirituba</span><a href="mailto:spaulo.ddm09@policiacivil.sp.gov.br" class="email-address">spaulo.ddm09@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>1ª DDM - Capital (Centro)</span><a href="#" data-email="spaulo.ddm01@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.ddm01@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>2ª DDM - Sul</span><a href="#" data-email="spaulo.ddm02@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.ddm02@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>3ª DDM - Oeste</span><a href="#" data-email="spaulo.ddm03@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.ddm03@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>4ª DDM - Norte</span><a href="#" data-email="ddm.sec04@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">ddm.sec04@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>5ª DDM - Leste</span><a href="#" data-email="ddm.sec05@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">ddm.sec05@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>8ª DDM - São Mateus</span><a href="#" data-email="ddm.sec08@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">ddm.sec08@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>9ª DDM - Pirituba</span><a href="#" data-email="spaulo.ddm09@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">spaulo.ddm09@policiacivil.sp.gov.br</a></div>
                 </div>
               </div>
 
@@ -677,30 +687,30 @@
                   <span>▼</span>
                 </div>
                 <div class="sub-category-content" style="display: none; padding: 6px 10px; border-top: 1px solid #e2e8f0;">
-                  <div class="email-list-item"><span>DHPP - Diretoria</span><a href="mailto:dhpp.diretoria@policiacivil.sp.gov.br" class="email-address">dhpp.diretoria@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>DHPP - Cartório Central</span><a href="mailto:dhpp.cartoriocentral@policiacivil.sp.gov.br" class="email-address">dhpp.cartoriocentral@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>DHPP - UIP</span><a href="mailto:dhpp.uip@policiacivil.sp.gov.br" class="email-address">dhpp.uip@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>1ª DP Homicídios (Geral)</span><a href="mailto:dhpp.1dh@policiacivil.sp.gov.br" class="email-address">dhpp.1dh@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>1ª DP Hom. Equipe A Sul</span><a href="mailto:dhpp.asul@policiacivil.sp.gov.br" class="email-address">dhpp.asul@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>1ª DP Hom. Equipe B Sul</span><a href="mailto:dhpp.bsul@policiacivil.sp.gov.br" class="email-address">dhpp.bsul@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>1ª DP Hom. Equipe C Sul</span><a href="mailto:dhpp.csul@policiacivil.sp.gov.br" class="email-address">dhpp.csul@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>1ª DP Hom. Equipe D Sul</span><a href="mailto:dhpp.dsul@policiacivil.sp.gov.br" class="email-address">dhpp.dsul@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>1ª DP Hom. Equipe E Sul</span><a href="mailto:dhpp.esul@policiacivil.sp.gov.br" class="email-address">dhpp.esul@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>1ª DP Hom. Equipe F Sul</span><a href="mailto:dhpp.fsul@policiacivil.sp.gov.br" class="email-address">dhpp.fsul@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>2ª DP Homicídios (Geral)</span><a href="mailto:dhpp.2dh@policiacivil.sp.gov.br" class="email-address">dhpp.2dh@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>2ª DP Hom. Equipe A Leste</span><a href="mailto:dhpp.aleste@policiacivil.sp.gov.br" class="email-address">dhpp.aleste@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>2ª DP Hom. Equipe B Leste</span><a href="mailto:dhpp.bleste@policiacivil.sp.gov.br" class="email-address">dhpp.bleste@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>2ª DP Hom. Equipe C Leste</span><a href="mailto:dhpp.cleste@policiacivil.sp.gov.br" class="email-address">dhpp.cleste@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>2ª DP Hom. Equipe D Leste</span><a href="mailto:dhpp.dleste@policiacivil.sp.gov.br" class="email-address">dhpp.dleste@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>2ª DP Hom. Equipe E Leste</span><a href="mailto:dhpp.eleste@policiacivil.sp.gov.br" class="email-address">dhpp.eleste@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>2ª DP Hom. Equipe F Leste</span><a href="mailto:dhpp.fleste@policiacivil.sp.gov.br" class="email-address">dhpp.fleste@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>3ª DP Homicídios</span><a href="mailto:dhpp.3dh@policiacivil.sp.gov.br" class="email-address">dhpp.3dh@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>4ª DP Homicídios</span><a href="mailto:dhpp.4dh@policiacivil.sp.gov.br" class="email-address">dhpp.4dh@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>5ª DP Crimes c/ Criança</span><a href="mailto:dhpp.5dh@policiacivil.sp.gov.br" class="email-address">dhpp.5dh@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>Pessoas Desaparecidas</span><a href="mailto:pessoasdesaparecidas@policiacivil.sp.gov.br" class="email-address">pessoasdesaparecidas@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>Divisão Antissequestro</span><a href="mailto:dhpp.das@policiacivil.sp.gov.br" class="email-address">dhpp.das@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>Proteção à Pessoa</span><a href="mailto:ppessoa.dhpp@policiacivil.sp.gov.br" class="email-address">ppessoa.dhpp@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>DDECRADI</span><a href="mailto:decradi@policiacivil.sp.gov.br" class="email-address">decradi@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>DHPP - Diretoria</span><a href="#" data-email="dhpp.diretoria@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.diretoria@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>DHPP - Cartório Central</span><a href="#" data-email="dhpp.cartoriocentral@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.cartoriocentral@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>DHPP - UIP</span><a href="#" data-email="dhpp.uip@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.uip@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>1ª DP Homicídios (Geral)</span><a href="#" data-email="dhpp.1dh@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.1dh@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>1ª DP Hom. Equipe A Sul</span><a href="#" data-email="dhpp.asul@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.asul@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>1ª DP Hom. Equipe B Sul</span><a href="#" data-email="dhpp.bsul@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.bsul@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>1ª DP Hom. Equipe C Sul</span><a href="#" data-email="dhpp.csul@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.csul@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>1ª DP Hom. Equipe D Sul</span><a href="#" data-email="dhpp.dsul@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.dsul@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>1ª DP Hom. Equipe E Sul</span><a href="#" data-email="dhpp.esul@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.esul@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>1ª DP Hom. Equipe F Sul</span><a href="#" data-email="dhpp.fsul@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.fsul@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>2ª DP Homicídios (Geral)</span><a href="#" data-email="dhpp.2dh@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.2dh@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>2ª DP Hom. Equipe A Leste</span><a href="#" data-email="dhpp.aleste@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.aleste@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>2ª DP Hom. Equipe B Leste</span><a href="#" data-email="dhpp.bleste@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.bleste@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>2ª DP Hom. Equipe C Leste</span><a href="#" data-email="dhpp.cleste@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.cleste@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>2ª DP Hom. Equipe D Leste</span><a href="#" data-email="dhpp.dleste@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.dleste@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>2ª DP Hom. Equipe E Leste</span><a href="#" data-email="dhpp.eleste@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.eleste@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>2ª DP Hom. Equipe F Leste</span><a href="#" data-email="dhpp.fleste@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.fleste@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>3ª DP Homicídios</span><a href="#" data-email="dhpp.3dh@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.3dh@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>4ª DP Homicídios</span><a href="#" data-email="dhpp.4dh@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.4dh@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>5ª DP Crimes c/ Criança</span><a href="#" data-email="dhpp.5dh@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.5dh@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>Pessoas Desaparecidas</span><a href="#" data-email="pessoasdesaparecidas@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">pessoasdesaparecidas@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>Divisão Antissequestro</span><a href="#" data-email="dhpp.das@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.das@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>Proteção à Pessoa</span><a href="#" data-email="ppessoa.dhpp@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">ppessoa.dhpp@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>DDECRADI</span><a href="#" data-email="decradi@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">decradi@policiacivil.sp.gov.br</a></div>
                 </div>
               </div>
 
@@ -711,13 +721,13 @@
                   <span>▼</span>
                 </div>
                 <div class="sub-category-content" style="display: none; padding: 6px 10px; border-top: 1px solid #e2e8f0;">
-                  <div class="email-list-item"><span>Coordenação GEACRIM</span><a href="mailto:dhpp.coordenadoriageacrim@policiacivil.sp.gov.br" class="email-address">dhpp.coordenadoriageacrim@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>GEACRIM 01</span><a href="mailto:dhpp.geacrim01@policiacivil.sp.gov.br" class="email-address">dhpp.geacrim01@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>GEACRIM 02</span><a href="mailto:dhpp.geacrim02@policiacivil.sp.gov.br" class="email-address">dhpp.geacrim02@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>GEACRIM 03</span><a href="mailto:dhpp.geacrim03@policiacivil.sp.gov.br" class="email-address">dhpp.geacrim03@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>GEACRIM 04</span><a href="mailto:dhpp.geacrim04@policiacivil.sp.gov.br" class="email-address">dhpp.geacrim04@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>GEACRIM 05</span><a href="mailto:dhpp.geacrim05@policiacivil.sp.gov.br" class="email-address">dhpp.geacrim05@policiacivil.sp.gov.br</a></div>
-                  <div class="email-list-item"><span>GEACRIM 06</span><a href="mailto:dhpp.geacrim06@policiacivil.sp.gov.br" class="email-address">dhpp.geacrim06@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>Coordenação GEACRIM</span><a href="#" data-email="dhpp.coordenadoriageacrim@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.coordenadoriageacrim@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>GEACRIM 01</span><a href="#" data-email="dhpp.geacrim01@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.geacrim01@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>GEACRIM 02</span><a href="#" data-email="dhpp.geacrim02@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.geacrim02@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>GEACRIM 03</span><a href="#" data-email="dhpp.geacrim03@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.geacrim03@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>GEACRIM 04</span><a href="#" data-email="dhpp.geacrim04@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.geacrim04@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>GEACRIM 05</span><a href="#" data-email="dhpp.geacrim05@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.geacrim05@policiacivil.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>GEACRIM 06</span><a href="#" data-email="dhpp.geacrim06@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">dhpp.geacrim06@policiacivil.sp.gov.br</a></div>
                 </div>
               </div>
 
@@ -737,7 +747,7 @@
                   <span>▼</span>
                 </div>
                 <div class="sub-category-content" style="display: none; padding: 6px 10px; border-top: 1px solid #e2e8f0;">
-                  <div class="email-list-item"><span>IML Capital (Exemplo)</span><a href="mailto:capital@iml.sp.gov.br" class="email-address">capital@iml.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>IML Capital (Exemplo)</span><a href="#" data-email="capital@iml.sp.gov.br" class="email-address" title="Clique para copiar">capital@iml.sp.gov.br</a></div>
                 </div>
               </div>
               <div style="margin-bottom: 10px; border: 1px solid #cbd5e1; border-left: 4px solid var(--accent); border-radius: 6px; overflow: hidden; background: #fff;">
@@ -746,7 +756,7 @@
                   <span>▼</span>
                 </div>
                 <div class="sub-category-content" style="display: none; padding: 6px 10px; border-top: 1px solid #e2e8f0;">
-                  <div class="email-list-item"><span>IML Interior (Exemplo)</span><a href="mailto:interior@iml.sp.gov.br" class="email-address">interior@iml.sp.gov.br</a></div>
+                  <div class="email-list-item"><span>IML Interior (Exemplo)</span><a href="#" data-email="interior@iml.sp.gov.br" class="email-address" title="Clique para copiar">interior@iml.sp.gov.br</a></div>
                 </div>
               </div>
             </div>
@@ -758,8 +768,8 @@
               <span>🪪 Inst. Ident. (Outros Estados)</span>
               <span>▼</span>
             </div>
-            <div class="email-category-content">
-               <div class="email-list-item"><span>Identificação MG (Exemplo)</span><a href="mailto:identificacao@mg.gov.br" class="email-address">identificacao@mg.gov.br</a></div>
+            <div class="email-category-content" id="identificacaoContent">
+               <div class="email-list-item"><span style="color:#7f8c8d; font-style:italic; font-size: 11px;">Carregando e-mails...</span></div>
             </div>
           </div>
 
@@ -770,7 +780,7 @@
               <span>▼</span>
             </div>
             <div class="email-category-content">
-               <div class="email-list-item"><span>Ofícios SAP (Exemplo)</span><a href="mailto:oficios@sap.sp.gov.br" class="email-address">oficios@sap.sp.gov.br</a></div>
+               <div class="email-list-item"><span>Ofícios SAP (Exemplo)</span><a href="#" data-email="oficios@sap.sp.gov.br" class="email-address" title="Clique para copiar">oficios@sap.sp.gov.br</a></div>
             </div>
           </div>
 
@@ -805,7 +815,7 @@
             <div class="email-category-content">
               <div class="email-list-item">
                 <span>IIRGD Geral</span>
-                <a href="mailto:alvaras.iirgd@policiacivil.sp.gov.br" class="email-address">alvaras.iirgd@policiacivil.sp.gov.br</a>
+                <a href="#" data-email="alvaras.iirgd@policiacivil.sp.gov.br" class="email-address" title="Clique para copiar">alvaras.iirgd@policiacivil.sp.gov.br</a>
               </div>
             </div>
           </div>
@@ -819,7 +829,7 @@
             <div class="email-category-content">
               <div class="email-list-item">
                 <span>Hospital Exemplo</span>
-                <a href="mailto:hospital@saude.sp.gov.br" class="email-address">hospital@saude.sp.gov.br</a>
+                <a href="#" data-email="hospital@saude.sp.gov.br" class="email-address" title="Clique para copiar">hospital@saude.sp.gov.br</a>
               </div>
             </div>
           </div>
@@ -833,7 +843,7 @@
             <div class="email-category-content">
               <div class="email-list-item">
                 <span>Central de Pedidos</span>
-                <a href="mailto:centralpedidos@tjsp.jus.br" class="email-address">centralpedidos@tjsp.jus.br</a>
+                <a href="#" data-email="centralpedidos@tjsp.jus.br" class="email-address" title="Clique para copiar">centralpedidos@tjsp.jus.br</a>
               </div>
             </div>
           </div>
@@ -855,24 +865,24 @@
                 <div class="sub-category-content" style="display: none; padding: 6px 10px; border-top: 1px solid #e2e8f0;">
                   <div class="email-list-item" style="flex-direction: column; align-items: flex-start; gap: 4px;">
                     <span style="font-weight: 600;">1ª VEC: Acordos de Não Persecução Penal e Penas Restritivas de Direitos.</span>
-                    <a href="mailto:decrim1vecpenasalteranativas@tjsp.jus.br" class="email-address">decrim1vecpenasalteranativas@tjsp.jus.br</a>
-                    <a href="mailto:decrim1vecmedidaseguranca@tjsp.jus.br" class="email-address">decrim1vecmedidaseguranca@tjsp.jus.br</a>
+                    <a href="#" data-email="decrim1vecpenasalteranativas@tjsp.jus.br" class="email-address" title="Clique para copiar">decrim1vecpenasalteranativas@tjsp.jus.br</a>
+                    <a href="#" data-email="decrim1vecmedidaseguranca@tjsp.jus.br" class="email-address" title="Clique para copiar">decrim1vecmedidaseguranca@tjsp.jus.br</a>
                   </div>
                   <div class="email-list-item" style="flex-direction: column; align-items: flex-start; gap: 4px;">
                     <span style="font-weight: 600;">2ª VEC: Feminino - Todas as matérias menos fechado/semiaberto/segurança</span>
-                    <a href="mailto:decrim2vec@tjsp.jus.br" class="email-address">decrim2vec@tjsp.jus.br</a>
+                    <a href="#" data-email="decrim2vec@tjsp.jus.br" class="email-address" title="Clique para copiar">decrim2vec@tjsp.jus.br</a>
                   </div>
                   <div class="email-list-item" style="flex-direction: column; align-items: flex-start; gap: 4px;">
                     <span style="font-weight: 600;">3ª VEC: Liberdade Condicional e Sursis</span>
-                    <a href="mailto:decrim3vec@tjsp.jus.br" class="email-address">decrim3vec@tjsp.jus.br</a>
+                    <a href="#" data-email="decrim3vec@tjsp.jus.br" class="email-address" title="Clique para copiar">decrim3vec@tjsp.jus.br</a>
                   </div>
                   <div class="email-list-item" style="flex-direction: column; align-items: flex-start; gap: 4px;">
                     <span style="font-weight: 600;">4ª VEC: Regime Aberto Masculino</span>
-                    <a href="mailto:decrim4vec@tjsp.jus.br" class="email-address">decrim4vec@tjsp.jus.br</a>
+                    <a href="#" data-email="decrim4vec@tjsp.jus.br" class="email-address" title="Clique para copiar">decrim4vec@tjsp.jus.br</a>
                   </div>
                   <div class="email-list-item" style="flex-direction: column; align-items: flex-start; gap: 4px;">
                     <span style="font-weight: 600;">5ª VEC: Gabinete</span>
-                    <a href="mailto:decrim@tjsp.jus.br" class="email-address">decrim@tjsp.jus.br</a>
+                    <a href="#" data-email="decrim@tjsp.jus.br" class="email-address" title="Clique para copiar">decrim@tjsp.jus.br</a>
                   </div>
                 </div>
               </div>
@@ -993,6 +1003,111 @@
   </div>
 
   <script>
+    // ===== E-mails dos Institutos de Identificação (Outros Estados) =====
+    const identificacaoOutrosEstados = [
+      { uf: "AC", email: "instituto.identificacao@ac.gov.br" },
+      { uf: "AC", email: "sandro.rodrigues@ac.gov.br" },
+      { uf: "AL", email: "antecedentecriminal@institutodeidentificacao.al.gov.br" },
+      { uf: "AL", email: "arquivocriminal.ii@institutodeidentificacao.al.gov.br" },
+      { uf: "AP", email: "gabinete@politec.ap.gov.br" },
+      { uf: "AP", email: "delegaciageral@policiacivil.ap.gov.br" },
+      { uf: "AM", email: "protocoloiiacm@gmail.com" },
+      { uf: "AM", email: "gecriminal.dptc@gmail.com" },
+      { uf: "BA", email: "antecedentecriminal.ispe@pcivil.ba.gov.br" },
+      { uf: "CE", email: "nucce.cihpb2@pefoce.ce.gov.br" },
+      { uf: "DF", email: "ii@pcdf.df.gov.br" },
+      { uf: "DF", email: "carlosscsaraiva@gmail.com" },
+      { uf: "ES", email: "gab.dei@pc.es.gov.br" },
+      { uf: "GO", email: "gerencia-ii@policiacientifica.gov.br" },
+      { uf: "GO", email: "antecedentes@policiacivil.go.gov.br" },
+      { uf: "MA", email: "ident@periciaoficial.ma.gov.br" },
+      { uf: "MT", email: "ginf@politec.mt.gov.br" },
+      { uf: "MS", email: "iigpms.decisoesjudiciais@cgp.sejusp.ms.gov.br" },
+      { uf: "MG", email: "expediente.ii@policiacivil.mg.gov.br" },
+      { uf: "PA", email: "identificacao@policiacivil.pa.gov.br" },
+      { uf: "PB", email: "geicc@ssp.pb.gov.br" },
+      { uf: "PR", email: "criminal@ii.pr.gov.br" },
+      { uf: "PE", email: "utic.criminal@iitb.pe.gov.br" },
+      { uf: "PE", email: "uticivil@iitb.pe.gov.br" },
+      { uf: "PI", email: "iijdm@pc.pi.gov.br" },
+      { uf: "RJ", email: "saa.ifp@gmail.com" },
+      { uf: "SC", email: "dicc@policiacientifica.sc.gov.br" },
+      { uf: "SE", email: "solicita.atestado.iiwsg@ssp.se.gov.br" }
+    ];
+
+    function renderIdentificacao() {
+      const container = document.getElementById('identificacaoContent');
+      if (!container) return;
+      container.innerHTML = '';
+      // Agrupa os e-mails por estado (mantendo a ordem de cadastro dentro de cada UF)
+      const porEstado = {};
+      identificacaoOutrosEstados.forEach(item => {
+        if (!porEstado[item.uf]) porEstado[item.uf] = [];
+        porEstado[item.uf].push(item.email);
+      });
+
+      Object.keys(porEstado).sort().forEach(uf => {
+        let div = document.createElement('div');
+        div.className = 'email-list-item';
+        div.style.gap = '8px';
+        const links = porEstado[uf]
+          .map(em => `<a href="#" data-email="${em}" class="email-address" title="Clique para copiar">${em}</a>`)
+          .join(', ');
+        div.innerHTML = `<span style="white-space:nowrap;">Identificação ${uf}</span> <span style="text-align:right; word-break:break-all; font-size:11px;">${links}</span>`;
+        container.appendChild(div);
+      });
+    }
+
+    // ===== Copiar e-mail para a área de transferência =====
+    let copyToastTimer = null;
+    function showCopyToast(msg) {
+      const toast = document.getElementById('copyToast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(copyToastTimer);
+      copyToastTimer = setTimeout(() => toast.classList.remove('show'), 1800);
+    }
+
+    function fallbackCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      let ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      return ok;
+    }
+
+    function copyEmail(text, el) {
+      const done = () => {
+        showCopyToast('📋 Copiado: ' + text);
+        if (el) {
+          el.classList.add('copied');
+          setTimeout(() => el.classList.remove('copied'), 1200);
+        }
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(done).catch(() => {
+          fallbackCopy(text) ? done() : showCopyToast('Não foi possível copiar');
+        });
+      } else {
+        fallbackCopy(text) ? done() : showCopyToast('Não foi possível copiar');
+      }
+    }
+
+    // Clique em qualquer e-mail (inclusive os gerados automaticamente) copia em vez de abrir o programa de e-mail
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('.email-address');
+      if (!link) return;
+      e.preventDefault();
+      e.stopPropagation();
+      const email = link.dataset.email || link.textContent.trim();
+      copyEmail(email, link);
+    });
+
     // Utilitários Widget Functions
     function toggleEmailWidget() {
       const body = document.getElementById('emailWidgetBody');
@@ -2861,7 +2976,7 @@ const data = {
         telefoniaData.sort((a,b) => a.nome.localeCompare(b.nome)).forEach(tel => {
           let div = document.createElement('div');
           div.className = 'email-list-item';
-          div.innerHTML = `<span>${tel.nome}</span> <a href="mailto:${tel.email}" class="email-address">${tel.email}</a>`;
+          div.innerHTML = `<span>${tel.nome}</span> <a href="#" data-email="${tel.email}" class="email-address" title="Clique para copiar">${tel.email}</a>`;
           telContainer.appendChild(div);
         });
       } else {
@@ -2880,6 +2995,7 @@ const data = {
       
       // Inicializar extratores dinâmicos
       extractDynamicData();
+      renderIdentificacao();
     };
 
     function switchTab(tab) {
