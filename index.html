@@ -1913,7 +1913,7 @@ const data = {
                 "8. Remover o ato da decisão, caso não haja outras determinações"
             ],
             "Deprecado - Intimação (testemunha)": [
-                "1. Modelo SAJ: 506270 (Para Audiência)",
+                "I. Modelo SAJ: 506270 (Para Audiência)",
                 "2. Confirmar o endereço, se é da cidade de São Paulo e se está correto.",
                 "3. Verificar se é caso de Réu Preso",
                 "4. Criar audiência na Pauta de Audiências",
@@ -1929,6 +1929,14 @@ const data = {
                 "6. Caso a proximidade do ato seja inferior a 30 dias, imediatamente informar ao coordenador para assinatura.",
                 "7. Encaminhar expediente à fila \"Ag. Decurso de Prazo\", pelo prazo do cumprimento do mandado e observação \"Ag. Mandado (fl. de rosto)",
                 "8. Remover o ato da decisão, caso não haja outras determinações"
+            ],
+            "Deprecado - Genérico": [
+                "I. Modelo SAJ: 506271",
+                "1. Confirmar o endereço, se é da cidade de São Paulo e se está correto.",
+                "2. Verificar se é caso de Réu Preso",
+                "3. Cadastrar a Parte a ser intimada no menu \"Partes e Representantes\"",
+                "4. Importante: quando finalizar a edição do documento, é obrigatório inserir 02 cópias das peças deprecadas.",
+                "5. Encaminhar expediente à fila \"Ag. Decurso de Prazo\", por 45 dias e observação \"Ag. Mandado (fl. de rosto)\"."
             ],
             "Deprecado - Resposta de Ofício": [
                 "1. Modelo SAJ - 506271",
@@ -2262,12 +2270,18 @@ const data = {
                 "4. Encaminhar à fila \"Ag. Decurso de Prazo\", pelo prazo de 05 dias, com a observação \"Ag. Trânsito em Julgado\"."
             ],
             "Certidão de Prazo Prescricional (art. 366)": [
-                "Modelo SAJ: 709765",
+                "I. Certidão: Modelo SAJ - 709765",
                 "1. Sem retomada da marcha processual: 20 anos da data da decisão de suspensão com fundamento no art. 366",
                 "2. Ultrapassada a data da retomada processual: 40 anos da data do recebimento da denúncia",
                 "3. IMPORTANTE: Se o réu for menor de 21 ou maior de 70 anos na data dos fatos, os prazos supra caem pela metade.",
-                "4. Preencher planilha excel no grupo Modelar 2ª do Júri, no Drive (FORAGIDOS)",
-                "5. Encaminhar para a fila \"Processo Suspenso no 366\", pelo prazo de 365 dias, com a observação \"Ag. Prisão\"."
+                "4. Preencher planilha excel no grupo Modelar 2ª do Júri (Link: https://tjsp.sharepoint.com/:u:/r/teams/GRP_Modelar-Jri/Documentos%20Compartilhados/General/Foragidos.url?d=wc9f0793ea9b14c27b90f177998f50ce1&csf=1&web=1&e=LCN95U)",
+                "5. Encaminhar para a fila \"Processo Suspenso no 366\", pelo prazo de 365 dias, com a observação \"Ag. Prisão\".",
+                "II. Ofício de Comunicação da Suspensão: Modelo SAJ - 709769",
+                "1. Deve ser expedido quando houver decisão determinando o início da suspensão",
+                "2. Após assinado, deve ser encaminhado ao email: iirgd.dipol@policiacivil.sp.gov.br",
+                "III. Revogação da Suspensão: Modelo SAJ - 709770",
+                "1. Deve ser expedido quando houver decisão determinando a revogação da suspensão",
+                "2. Após assinado, deve ser encaminhado ao email: iirgd.dipol@policiacivil.sp.gov.br"
             ],
             "Certidão de Trânsito em Julgado": [
                 "1. Modelo SAJ: 1000138",
@@ -2314,6 +2328,24 @@ const data = {
                 "9. Decurso da última intimação para pagamento, é a mesma data do vencimento",
                 "10. Encaminhar para a fila Ag. Decurso de Prazo, pelo prazo de 2 dias, com a observação \"Ag. Cadastro PGE\".",
                 "IMPORTANTE: Não é possível quebrar vínculos nesse mandado devido à comunicação entre o SAJ e o Portal da PGE."
+            ],
+            "Inquérito Policial Militar e Inquérito Policial Civil": [
+                "I. No Inquérito Policial Militar (IPM):",
+                "1. Verificar em \"dados do processo\" se já houve distribuição do processo com pendência ao Inquérito Policial Civil (IPC)",
+                "2. Caso não tenha a pendência, buscar o nome das partes e o número do Boletim de Ocorrência dos fatos.",
+                "3. Consultar no SAJ (através da aba Consultas) pelo nome das partes",
+                "3.1. Recomenda-se apagar o campo \"2ª Vara do Júri\" para que a busca abranja todos so cartórios da Base Barra Funda",
+                "4. Ao localizar processos que tenham os mesmos nomes das partes, o qual aparentemente trata-se do IPC, confirmar os dados anotados no IPM",
+                "II. Confirmando o Inquérito Policial Civil (IPC):",
+                "1. Procure no IPC, o nome das partes envolvidas",
+                "2. Procure o Boletim de Ocorrência dos fatos",
+                "3. Estando os itens 1 e 2 iguais ao IPM, poderá ser certificado que se trata de inquérito civil com os mesmos fatos do inquérito militar",
+                "III. Certidão",
+                "1. No IPM: \"Certifico e dou fé que há Inquérito Policial Civil instaurado sobre os mesmos fatos e distribuído sob o número XXXXXXX-XX.AAAA.8.26.XXXX (sempre no formato completo)\"",
+                "2. Abrir vista ao Ministério Público.",
+                "3. Na hipótese da distribuição ter sido realizada em outra Vara: \"Certifico e dou fé que há inquérito Policial Civil instaurado sobre os mesmos fatos e distribuido à [NOME DA VARA] sob o número XXXXXXX-XX.AAAA.8.26.XXXX (sempre no formato completo)\"",
+                "4. Abrir vista ao Ministério Público.",
+                "5. Encaminhar para fila \"Ag. Decurso de Prazo\", pelo prazo de 5 dias, com a observação \"Ag. MP\""
             ]
         },
         "Mandados": {
@@ -2557,15 +2589,31 @@ const data = {
                 "-"
             ],
             "Diligências": [
-                "1. Verificar a Delegacia responsável (da circunscrição ou especializada)",
-                "2. Modelo SAJ 1973",
-                "3. SER CLARO, DIRETO e CONCISO.",
-                "4. Enviar o e-mail com as cópias, se houver menção, e com cópia do Boletim de Ocorrência.",
-                "5. Subir comprovantes nos autos.",
-                "6. Encaminhar para a fila \"Ag. Decurso de Prazo\", pelo prazo de 30 dias ou outro determinado, com a observação \"Ag. Ofício\""
+                "I. Genérica: Modelo SAJ - 1973",
+                "1. Ser claro, direto e conciso",
+                "1.1. Lembrar que quem vai receber o ofício não tem conhecimendo do processo, portanto é imprescindível a clareza.",
+                "2. Enviar e-mail com as cópias dos documentos do processo que forem pertinentes",
+                "2.1. Confirmar a delegacia que receberá o e-mail (sempre a prioridade será a especializada, caso não haja, será a delegacia da circunscrição no Boletim de Ocorrência)",
+                "2.2. Sempre encaminhar cópia do Boletim de Ocorrência",
+                "3. Subir o comprovante de envio nos autos",
+                "4. Encaminhar para a fila \"Ag. Decurso de Prazo\", pelo prazo de 30 dias ou outro determinado, com a observação \"Ag. Ofício\"",
+                "II. Capturas: Modelo SAJ - 1973",
+                "1. Consultar os endereços fornecidos pelo Ministério Público",
+                "1.1. Caso seja endereço no interior, buscar no Google Maps a delegacia mais próxima para cumprir a diligência de captura",
+                "1.2. Caso seja endereço de outro Estado, procurar no Google os endereços do setor de Capturas de cada estado, sem prejuízo das delegacias mais próximas.",
+                "1.3. Caso seja endereço da Capital, consultar a delegacia responsável pelo endereço (link: https://www.google.com/maps/d/viewer?hl=pt-BR&mid=1Cn5198YTPrwcJEoVW4B1RIkr1Sc&ll=-23.56405202724826%2C-46.69251439576419&z=13)",
+                "2. Importante: deverá ser expedido um ofício para cara Distrito Policial com os respectivos endereços de sua área de circunscrição",
+                "2.1. Sem prejuízo, deverá ser expedido um ofício com todos os endereços a serem diligenciados no Estado de São Paulo para a divisão de Capturas da Polícia Civil (e-mail: capturas@policiacivil.sp.gov.br)",
+                "2.2. Caso seja endereço de outro Estado, será expedido um ofício para cada Distrito Policial da cidade (ou da circunscrição, se possível) responsável pelos endereços",
+                "2.2.1. Sem prejuízo, deverá ser expedido um ofício com todos os endereços de um mesmo Estado à divisão de Capturas respectiva.",
+                "3. Sugestão de redação para o ofício aos Distritos Policiais: \"[...] Solicito a Vossa Senhoria providências para realizar diligências com vistas ao cumprimento do Mandado de Prisão expedido em desfavor de [NOME] nos endereços abaixo [...]\"",
+                "4. Sugestão de redação para o ofício à Divisão de Capturas: \"[...] Comunico a Vossa Senhoria que foram solicitadas diligências com vistas ao cumprimento do Mandado de Prisão expedido em desfavor de [NOME] nos endereços abaixo [...]\".",
+                "4.1. Ao lado do endereço, informar o respectivo Distrito Policial oficiado.",
+                "5. Importante: Encaminhar o mandado de prisão em anexo.",
+                "6. Encaminhar processo para a fila de \"Ag. Decurso de Prazo\", pelo prazo de 30 dias, com a observação \"Ag. Oficios de Captura\"."
             ],
             "Google": [
-                "1. Modelo SAJ: 909",
+                "I. Modelo SAJ: 909",
                 "2. Importante: ter cadastro no Google LERS",
                 "3. Constar no ofício os endereços de email e/ou contas a serem investigadas, bem como respectivos CPF's",
                 "4. Ser claro e conciso",
@@ -2607,12 +2655,7 @@ const data = {
                 "8. Encaminhar para a fila Ag. Decurso de Prazo, por 30 dias ou prazo determinado, com a observação \"Ag. Ofício\"."
             ],
             "Ofício - TRE": [
-                "1. Modelo SAJ: 500934",
-                "2. Importante: deve ser expedido apenas após o trânsito em julgado para ambas as partes",
-                "3.  Aguardar assinatura do Magistrado (estará assinado quando o documento estiver na fila \"Ofícios - Ag. Impressão\")",
-                "4. Após assinatura do magistrado, encaminhar para: sedipo@tre-sp.jus.br",
-                "5. Subir comprovante de envio nos autos",
-                "6. Remover ofício da fila de \"Ag. Resposta\"."
+                "INCLUIR NOVO PROCEDIMENTO"
             ],
             "Polícia Federal - CAC": [
                 "-"
@@ -2736,12 +2779,6 @@ const data = {
                 "III. GCM - Modelo SAJ: (enviar para xxxx)",
                 "-",
                 "IV. SAMU - Modelo SAJ: (enviar para xxxx)",
-                "-"
-            ],
-            "Revogação da Suspensão do Processo (art. 366)": [
-                "-"
-            ],
-            "Suspensão do Processo (art. 366)": [
                 "-"
             ],
             "Whatsapp": [
@@ -2969,7 +3006,7 @@ const data = {
                 "II. No SAJ (INCLUIR MANDADO AGRESSOR?)",
                 "1. Subir o Mandado de Protetiva de Urgência nos autos",
                 "2. Subir a certidão de cumprimento",
-                "3. Encaminhar a peça, por email, para o IIRGD: dipol@iirgd.sp.gov.br",
+                "3. Encaminhar a peça, por email, para o IIRGD: iirgd.dipol@policiacivil.sp.gov.br",
                 "4. Subir o comprovante nos autos",
                 "5. Atualizar o Histórico de Partes, cadastrando as protetivas determinadas.",
                 "6. Encaminhar processo para a fila \"Acompanhamento de Medida Cautelar - Art. 319 CPP\", pelo prazo de exatamente um ano da data da decisão que determinou as protetivas, com a observação \"Rever Protetivas\"",
@@ -3116,7 +3153,7 @@ const data = {
                 "II. No Processo Principal",
                 "1. Certificar no processo o procedimento realizado",
                 "1.1. Sugestão de Redação: \"Certifico e dou fé que apensei a estes autos os autos de número XXXXXXX-XX.XXXX.8.26.XXXX",
-                "2. Caso o final seja de outro escrevente, oportuno avisá-lo, para dar andamento às eventuais determinações contidas no despacho ou na decisão de apensamento."
+                "2. Caso o final seja de outro escrevente, oportuno avisá-lo para dar andamento às eventuais determinações contidas no despacho ou na decisão de apensamento."
             ]
         },
         "Arquivamento": {
@@ -3181,6 +3218,13 @@ const data = {
             "Habeas Corpus": [
                 "1. Cadastro deve ser via DISTRIBUIDOR."
             ]
+        },
+        "Processo em Instância Superior": {
+            "Remessa ao Segundo Grau": [],
+            "": [],
+            "Pedido de Diligências": [],
+            "Intimação de Advogado Dativo": [],
+            "Retorno à Vara de Origem - Acórdão": []
         }
     },
     "3. Diversos": {
@@ -3233,10 +3277,6 @@ const data = {
                 "4. Qualquer dúvida em relação aos jurados, deve-se procurar o responsável pelos Jurados da 2ª Vara do Júri",
                 "5. As listas de jurados podem ser consultadas no seguinte link: https://tjsp-my.sharepoint.com/:f:/r/personal/alexmaia_tjsp_jus_br/Documents/J%C3%BAri?d=w599f222f1d11415e9a0a6b65c85436ce&csf=1&web=1&e=xcuapF"
             ]
-        },
-        "Prazos": {
-            "Cartas Precatórias": [],
-            "Recursos/Apelações": []
         },
         "Provimentos": {
             "Prov. 32/00": [
@@ -3488,8 +3528,10 @@ const data = {
             "Link e QRCode": [
                 "1. No Calendário do Outlook, procurar a Audiência Virtual em questão e copiar o link",
                 "2. Encurtar o link através do site: https://tinyurl.com/",
-                "2.1 Basta colar o link e clicar em \"shorten link\"",
-                "2.2 Copiar o link",
+                "2.1 Basta colar o link",
+                "2.1.1. Em \"Alias\" digitar o número do processo (sem pontos) e a data da audiência, separados por um \"-\".",
+                "2.1.1.1. Ex.: Processo 1234567-89.2026.8.26.1234 com audiência designada para 10 de outubro de 2026 ficaria: \"1234567892026-101026\"",
+                "2.2. Clicar em Shorten Link e copiar o link",
                 "3. Gerar o QR code",
                 "3.1. Colar o link encurtado (já servindo como teste de funcionalidade) e, ao abrir, clicar com o botão direito do mouse e em \"GERAR QRCODE\".",
                 "3.2. O QRCODE gerado será oficial do navegador, qual seja, Edge ou Chrome",
@@ -3720,6 +3762,13 @@ const data = {
             "Cadastro de Reincidência": [
                 "1. No momento de cadastro da sentença atentar-se à eventual reincidência",
                 "ELABORAR CHECKLIST"
+            ],
+            "Histórico de Partes em Lote": [
+                "1. Na aba \"CRIMINAL\", selecionar \"Histórico de Partes em Lote\"",
+                "2. IMPORTANTE: certifique-se de que a movimentação a ser colocada seja de fato igual às partes que serão selecionadas.",
+                "3. Selecionar o processo",
+                "4. Selecionar as partes que tem a movimentação em comum a ser lançada.",
+                "5. Preencher a data e a movimentação e salvar."
             ]
         }
     },
