@@ -2074,7 +2074,7 @@
       });
     }
       // COMEÇO CHECKLIST EXCEL
-   const data = {
+const data = {
     "1. Por Fase": {
         "Denúncia": {
             "Após assinatura da decisão": [
@@ -3188,7 +3188,7 @@
                 "2.1. O modelo automaticamente incluirá o endereçamento da delegacia que investigou os fatos",
                 "2.2. Atentar-se se a delegacia é a mesma que mantém a custódia dos objetos apreendidos",
                 "3. No corpo do ofício deve-se deixar clara a diligência de forma objetiva",
-                "3.1. Verificar um exemplo no link: ELABORAR OFICIO",
+                "3.1. Verificar exemplo: https://tinyurl.com/confronto-balistico",
                 "4. Após assinatura (o ofício, quando assinado, constará na fila \"Ofícios Ag. Impressão\"), encaminhar por e-mail.",
                 "4.1. Deverá ser encaminhado para o e-mail da delegacia que custodia os objetos",
                 "4.2. Convém copiar o Instituto de Criminalística no e-mail para que tomem ciência",
@@ -3266,14 +3266,10 @@
                 "I. Solictação de Folha de Antecedentes"
             ],
             "Cobrança de Mandados": [],
-            "IMESC": [],
-            "Laudo Complementar": [
+            "Instituto Médico Legal": [
                 "-"
             ],
-            "Laudo Direto": [
-                "-"
-            ],
-            "Laudo Indireto": [
+            "Instituto de Criminalística": [
                 "-"
             ],
             "META": [
@@ -3295,14 +3291,10 @@
             "Ofício - TRE": [
                 "INCLUIR NOVO PROCEDIMENTO"
             ],
-            "Polícia Federal - CAC": [
-                "-"
-            ],
-            "Polícia Federal - Réu Estrangeiro (comunicação)": [
-                "-"
-            ],
-            "Polícia Federal - Réu Estrangeiro (expulsão)": [
-                "-"
+            "Polícia Federal": [
+                "I. CAC",
+                "II. Comunicação",
+                "III. Expulsão"
             ],
             "Quebra de Sigilo Bancário": [
                 "-"
@@ -3807,7 +3799,7 @@
             ]
         },
         "Apensamento": {
-            "Apensamento": [
+            "Apensamento - SAJ": [
                 "I. No processo a ser apensado",
                 "1. Na aba \"Andamento\", selecionar \"Apensamento/Desapensamento\"",
                 "1.1. Na janela que abrir, no canto esquerdo deverá ser selecionado o processo onde os autos em questão serão apensados",
@@ -3832,11 +3824,10 @@
                 "1.2. Se há determinação de destinação de armas/objetos apreendidos",
                 "1.2.1 Caso haja, deverá encaminhar uma cópia da decisão/despacho-ofício para onde o local está custodiado",
                 "1.2.1.1. A informação de onde o objeto estará constará no Termo de Exibição e Apreensão ou no Sistema Nacional de Gestão de Bens (SNGB)",
-                "3.1 Encaminhar para a fila \"Ag. Decurso de Prazo\", pelo prazo de 5 dias, com a observação \"Ag. Quesitos da Defesa\"",
                 "1.2.2.1 Neste caso, vide tópico Devolução/Destruição de Armas/Objetos",
-                "I. Ocorre após a apresentação dos quesitos pelas partes",
+                "2. Caso a decisão/despacho não valha como ofício, deverá ser expedido um ofício comunicando a destinação dos objetos.",
                 "3. Dar ciência ao Ministério Público para que ele proceda às comunicações pertinentes",
-                "2. A partir do despacho expedir o ofício (CONTINUAR DAQUI)",
+                "4. Encaminhar para a fila \"Ag. Decurso de Prazo\", pelo prazo de 60 dias, com a observação \"Ag. Arquivamento\".",
                 "5. IMPORTANTE: Após o decurso do prazo acima:",
                 "5.1 Na Aba \"Movimentação Unitária\", incluir movimentação 61615",
                 "5.2. Encaminhar para a fila \"Processos Arquivados\"."
@@ -3848,13 +3839,49 @@
             ],
             "Após a Sentença": [
                 "I. Sentença de Impronúncia",
+                "1. Verificar na decisão/despacho:",
+                "1.1. Se  consta a observação de que a decisão/despacho servirá como ofício",
+                "1.2. Se há determinação de destinação de armas/objetos apreendidos",
+                "1.2.1 Caso haja, deverá encaminhar uma cópia da decisão/despacho-ofício para onde o local está custodiado",
+                "1.2.1.1. A informação de onde o objeto estará constará no Termo de Exibição e Apreensão ou no Sistema Nacional de Gestão de Bens (SNGB)",
+                "1.2.2.1 Neste caso, vide tópico Devolução/Destruição de Armas/Objetos",
+                "2. Caso a decisão/despacho não valha como ofício, deverá ser expedido um ofício comunicando a destinação dos objetos.",
+                "3. Dar ciência ao Ministério Público para que ele proceda às comunicações pertinentes",
+                "4. Encaminhar para a fila \"Ag. Decurso de Prazo\", pelo prazo de 60 dias, com a observação \"Ag. Arquivamento\".",
+                "5. IMPORTANTE: Após o decurso do prazo acima:",
+                "5.1 Na Aba \"Movimentação Unitária\", incluir movimentação 61615",
+                "5.2. Encaminhar para a fila \"Processos Arquivados\".",
                 "II. Sentença de Absolvição",
-                "III. Sentença Condenatória"
+                "1. Verificar na decisão/despacho:",
+                "1.1. Se  consta a observação de que a decisão/despacho servirá como ofício",
+                "1.2. Se há determinação de destinação de armas/objetos apreendidos",
+                "1.2.1 Caso haja, deverá encaminhar uma cópia da decisão/despacho-ofício para onde o local está custodiado",
+                "1.2.1.1. A informação de onde o objeto estará constará no Termo de Exibição e Apreensão ou no Sistema Nacional de Gestão de Bens (SNGB)",
+                "1.2.2.1 Neste caso, vide tópico Devolução/Destruição de Armas/Objetos",
+                "2. Caso a decisão/despacho não valha como ofício, deverá ser expedido um ofício comunicando a destinação dos objetos.",
+                "3. Dar ciência ao Ministério Público para que ele proceda às comunicações pertinentes",
+                "4. Encaminhar para a fila \"Ag. Decurso de Prazo\", pelo prazo de 60 dias, com a observação \"Ag. Arquivamento\".",
+                "5. IMPORTANTE: Após o decurso do prazo acima:",
+                "5.1 Na Aba \"Movimentação Unitária\", incluir movimentação 61615",
+                "5.2. Encaminhar para a fila \"Processos Arquivados\".",
+                "III. Sentença Condenatória",
+                "1. Verificar na decisão/despacho:",
+                "1.1. Se  consta a observação de que a decisão/despacho servirá como ofício",
+                "1.2. Se há determinação de destinação de armas/objetos apreendidos",
+                "1.2.1 Caso haja, deverá encaminhar uma cópia da decisão/despacho-ofício para onde o local está custodiado",
+                "1.2.1.1. A informação de onde o objeto estará constará no Termo de Exibição e Apreensão ou no Sistema Nacional de Gestão de Bens (SNGB)",
+                "1.2.2.1 Neste caso, vide tópico Devolução/Destruição de Armas/Objetos",
+                "2. Caso a decisão/despacho não valha como ofício, deverá ser expedido um ofício comunicando a destinação dos objetos.",
+                "3. Dar ciência ao Ministério Público para que ele proceda às comunicações pertinentes",
+                "4. Encaminhar para a fila \"Ag. Decurso de Prazo\", pelo prazo de 60 dias, com a observação \"Ag. Arquivamento\".",
+                "5. IMPORTANTE: Após o decurso do prazo acima:",
+                "5.1 Na Aba \"Movimentação Unitária\", incluir movimentação 61619",
+                "5.2. Encaminhar para a fila \"Processos Arquivados\"."
             ]
         },
         "IMESC": {
             "Cadastro de Portaria": [
-                "I. Cadastro",
+                "I. Cadastro de Portaria",
                 "1. Aba \"Cadastro\"",
                 "1.1 \"Petições Intermediárias e Incidentes Processuais Excepcionais",
                 "1.1.1 Em Classe inserir o Código 333 (Insanidade)",
@@ -3874,18 +3901,44 @@
                 "1. Subir no incidente:",
                 "1.1 O Boletim de Ocorrência",
                 "1.2. A Denúncia",
-                "1.6. Setor destinatário: Art. 28 CPP / Conflito de Atribuições de Competência",
-                "1.4. A Resposta à Acusação (caso já tenha sido juntado)",
-                "1.4.1 IMPORTANTE: O fato de eventualmente não ter sido juntada a Resposta à Acusação não impede o andamento do expediente de insanidade",
-                "1.5. A decisão de que determinou a instauração do expediente.",
+                "1.3. A Resposta à Acusação (caso já tenha sido juntado)",
+                "1.3.1 IMPORTANTE: O fato de eventualmente não ter sido juntada a Resposta à Acusação não impede o andamento do expediente de insanidade",
+                "1.4. A decisão de que determinou a instauração do expediente.",
                 "2. Abrir vista ao Ministério Público",
                 "2.1 Encaminhar para a fila \"Ag. Decurso de Prazo\", pelo prazo de 5 dias, com a observação \"Ag. Quesitos do MPSP\"",
                 "3. Após a apresentação dos quesitos pelo Ministério Público, abrir vista à Defesa",
                 "3.1 Encaminhar para a fila \"Ag. Decurso de Prazo\", pelo prazo de 5 dias, com a observação \"Ag. Questios da Defesa\"",
                 "3.1.1 O prazo correrá em dobro, caso o réu seja assistido pela Defensoria Pública",
-                "I. Ocorre após a apresentação dos questos pelas partes",
-                "1. Encaminhar para a fila \"Conclusos-Minuta\"",
-                "2. A partir do despacho expedir o oficio (CONTINUAR DAQUI)"
+                "4. Após a aparesentação dos Quesitos, encaminhar para a fila \"Conclusos-Minuta\""
+            ],
+            "Ofício IMESC": [
+                "1. Modelo SAJ: 504809",
+                "2. Durante a Edição do Ofício",
+                "2.1. Além do que está preenchido automaticamente:",
+                "2.1.1. marcar nos campos com um \"x\" maiúsculo ou minúsculo",
+                "2.1.1.1. Apenas nesse formato: (X) ou (x)",
+                "2.1.1.2. NÃO pode haver espaços ou duplicatas ( x), (xx)",
+                "2.2. Importante: CPF deve seguir, obrigatoriamente, o formato XXX.XXX.XXX-XX",
+                "3. Importante: caso de réu preso:",
+                "3.1. O nome do local de prisão é obrigatório ser no formato que aparece no histórico de partes",
+                "3.1.1. Deve seguir o modelo exato modelo preenchido no campo de prisão",
+                "3.1.2. Ex.: Cód: 3194 - \"Centro de Detenção Provisória de Vila Independência\"",
+                "3.1.3. Deve constar exatamente \"Centro de Detenção Provisória de Vila Independência\"",
+                "4. Em Tipo de Perícia: (X) Direta",
+                "5. Se for apenas um periciando, deverá ser deixado em branco o item \"outros periciandos\"",
+                "6. Tipo de Ação: (X) Incidente de Insanidade Mental",
+                "7. IMPORTANTE: O ofício será enviado via SAJ junto dos quesitos apresentandos, não sendo necessário envio por e-mail.",
+                "8. Encaminhar para a fila \"Ag. Decurso de Prazo\", pelo prazo de 30 dias, com a observação \"Ag. Data IMESC\"."
+            ],
+            "Perícia/Laudo": [
+                "I. Após agendamento da data e local da perícia",
+                "1. Hipótese de réu preso",
+                "1.1. Requisitar o réu preso para comparecimento na data e local fornecidos pelo IMESC",
+                "2. Hipótese de réu solto",
+                "2.1. Expedir mandado de intimação para comparecimento na data e local fornecidos pelo IMESC",
+                "2.2. Encaminhar para a fila de \"Ag. Decurso de Prazo\", pelo prazo de classificação do mandado, com a obs. \"Ag. Mandado\"",
+                "3. Encaminhar para a fila de \"Ag. Decurso de Prazo\", pelo prazo de 30 dias além da data da perícia, com a obs. \"Ag. Laudo IMESC\"",
+                "3.1. Importante: apenas será, nos casos de réu solto, encaminhado ao prazo para aguardar o laudo quando houver sua devida intimação"
             ]
         },
         "Redistribuição": {
@@ -4208,7 +4261,18 @@
         },
         "Cadastros": {
             "Google LERS": [],
-            "Infoseg/SINESP": []
+            "Infoseg/SINESP": [],
+            "Novo Advogado": [
+                "1. Menu superior \"Cadastro\"",
+                "2. Clicar em \"Pessoas - Cadastro Controlado\"",
+                "2.1. Selecionar \"Novo\"",
+                "2.2. Incluir os dados:",
+                "2.2.1. Nome",
+                "2.2.2. OAB",
+                "2.2.3. E-mail",
+                "2.2.4. Endereço",
+                "2.3. Salvar"
+            ]
         },
         "Devolução/Destruição de Armas/Objetos": {
             "Armas": [],
@@ -4217,6 +4281,7 @@
         },
         "Upload no Processo": {
             "Arquivos de Imagem e Multimídia": [
+                "1. IMPORTANTE: quando houver mídia física e lacrada, comunicar imediatamente ao Assistente Judiciário para que conste determinação expressa e orientações quanto ao rompimento.",
                 "I. Vídeo",
                 "1. Importante: caso o vídeo esteja no formado MP4 e com tamanho menor que 999MB, não será necessário convertê-lo",
                 "1.1. Caso seja necessária a conversão, deverá ser feito via aplicativo WinFF",
