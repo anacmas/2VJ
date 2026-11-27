@@ -418,6 +418,9 @@
       line-height: 1.5;
       user-select: text;
     }
+    /* [NOVO] Itens principais com cor */
+    .checklist-item.ck-principal { background: #f7fbfe; border-color: #dfecf7; border-left: 4px solid var(--accent); margin-top: 16px; }
+    .checklist-item.ck-principal label { font-weight: 600; color: var(--primary); }
     .checklist-item.checked {
       background-color: #e2e8f0;
       border-color: #cbd5e1;
@@ -541,6 +544,10 @@
       .checklist-container { border: none; background-color: transparent; }
       .checklist-item { break-inside: avoid; border: none; padding: 8px 0; }
       .checklist-item.checked { background-color: transparent; opacity: 1; }
+      /* itens principais: cinza visível na impressão em preto e branco */
+      .checklist-item.ck-principal { background-color: #e0e0e0 !important; border-left: 4px solid #333 !important; padding: 8px 10px; margin-top: 12px;
+        -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .checklist-item.ck-principal label { color: #000 !important; font-weight: 700; }
       .roman-accordion:not(:has(.roman-content[style*="display: block"])) { display: none !important; }
       .roman-content:not([style*="display: block"]) { display: none !important; }
       .roman-content[style*="display: block"] { display: block !important; }
@@ -5108,7 +5115,23 @@ const data = {
         });
       }
       
+      destacarPrincipais();
       checklistContainer.style.display = 'block';
+    }
+
+    // [NOVO] Itens principais ("2.", "3.") ganham cor; os filhos ("2.1.", "2.1.1.") ficam como estão.
+    // Só vale nas rotinas que têm subitens numerados.
+    function destacarPrincipais() {
+      const grupos = [checklistItems, ...checklistItems.querySelectorAll('.roman-content')];
+      grupos.forEach(box => {
+        const itens = [...box.querySelectorAll(':scope > .checklist-item')];
+        const nums = itens.map(it => {
+          const m = it.querySelector('label').textContent.trim().match(/^(\d+(?:\.\d+)*)\.?(?=\s)/);
+          return m ? m[1] : null;
+        });
+        if (!nums.some(n => n && n.includes('.'))) return;
+        itens.forEach((it, i) => { if (nums[i] && !nums[i].includes('.')) it.classList.add('ck-principal'); });
+      });
     }
 
     function confirmClearAll() {
